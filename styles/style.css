@@ -11,6 +11,20 @@ h1,h2,h3,h4,h5,h6 {
 	font-size:100%;
 }
 
+:root{
+    --ff-heading: 'Epilogue', sans-serif;
+    --ff-text: 'Open Sans', sans-serif;
+
+    --bg-primary: linear-gradient(180deg, #EE811C, #F5D0A9);
+    --bg-secondary: #F5D0A9;
+    --bg-white: #fff;
+    --bg-orange: #EE811C;
+
+    --text-color: rgb(66, 66, 66);
+    --text-color-secondary: #EE811C;
+    --text-white: #fff;
+}
+
 /*PÁGINA 01*/
 
 #page01{
@@ -96,7 +110,7 @@ h1,h2,h3,h4,h5,h6 {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #EE811C;
+    color: var(--text-color-secondary);
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
@@ -105,13 +119,14 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: 40px;
 }  
 .button-anim:hover {
-    background: #EE811C;
-    color: #fff;
+    background: var(--bg-orange);
+    color: var(--text-white);
     border-radius: 5px;
-    box-shadow: 0 0 5px #EE811C,
-        0 0 25px #EE811C,
-        0 0 50px #EE811C,
-        0 0 100px #EE811C;
+    box-shadow: 0 0 5px var(--bg-orange),
+        0 0 25px var(--bg-orange),
+        0 0 50px var(--bg-orange),
+        0 0 100px var(--bg-orange);
+        
     }
 a span {
     position: absolute;
@@ -122,7 +137,7 @@ a #span1 {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #EE811C);
+    background: linear-gradient(90deg, transparent, var(--bg-orange));
     animation: btn-anim1 1s linear infinite;
 }
 @keyframes btn-anim1 {
@@ -138,7 +153,7 @@ a #span2 {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #EE811C);
+    background: linear-gradient(180deg, transparent, var(--bg-orange));
     animation: btn-anim2 1s linear infinite;
     animation-delay: .25s;
 }
@@ -155,7 +170,7 @@ a #span3 {
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #EE811C);
+    background: linear-gradient(270deg, transparent, var(--bg-orange));
     animation: btn-anim3 1s linear infinite;
     animation-delay: .5s;
 }
@@ -172,7 +187,7 @@ a #span4 {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #EE811C);
+    background: linear-gradient(360deg, transparent, var(--bg-orange));
     animation: btn-anim4 1s linear infinite;
     animation-delay: .75s;
 }
@@ -189,7 +204,7 @@ a #span4 {
 
 .body-form{
     height: min-content;
-    background: linear-gradient(180deg, #EE811C, #F5D0A9) fixed;
+    background: var(--bg-primary) fixed;
     flex-direction: column;
     align-items: center;
     
@@ -200,7 +215,7 @@ a #span4 {
     text-align: center;
     margin-bottom: 5%;
     font-size: clamp(20px, 5vw, 40px);
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
 }
 
 .container {
@@ -234,7 +249,8 @@ a #span4 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 5%;}
+    gap: 5%;
+}
 
 fieldset{
     width: 75%;
@@ -244,13 +260,13 @@ legend {
     text-align: center;
     font-size: clamp(15px, 3vw, 30px);
     font-weight: 700;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 label {
     font-size: 16px;
     font-weight: 700;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
 }
 
 input {
@@ -263,11 +279,11 @@ input {
     border-bottom: 2px solid #EE811C;
     outline: none;
     font-size: 16px;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
 }
 
 .btn {
-    width: min-content;
+    width: max-content;
     padding: 10px 20px;
     margin-top: -5px;
     margin-bottom: 10px;
@@ -357,7 +373,7 @@ header{
     grid-area: header;
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(180deg, #EE811C, #F5D0A9);
+    background: var(--bg-primary);
     position: sticky;
     top: 0;
     margin-bottom: 50vh;
@@ -378,14 +394,15 @@ nav ul {
     gap: 15px;
 }
 nav ul li {
+    font-family: var(--ff-heading);
     font-size: 20px;
     font-weight: 700;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
     cursor: pointer;
 }
 
 nav ul li:hover {
-    color: #EE811C;
+    color: var(--text-color-secondary);
 }
 
 @media screen and (max-width: 768px) {
@@ -406,7 +423,7 @@ nav ul li:hover {
 .menu-hamburguer hr{
     width: 50px;
     margin-bottom: 10px;
-    border: 1px solid #EE811C;
+    border: 1px solid var(--bg-orange);
 }
 @media screen and (max-width: 768px) {
     .menu-hamburguer{
@@ -429,12 +446,12 @@ nav ul li:hover {
         grid-template-areas: 
         "card01"
         "card02"
-        "card03"
         "card04"
+        "card03"
         "card05"
         "card06"
-        "card07"
         "card08"
+        "card07"
         "card09";
     }
 }
@@ -444,7 +461,7 @@ nav ul li:hover {
     margin-top: 50vh;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--bg-white);
     align-items: center; 
 }
 
@@ -454,16 +471,18 @@ nav ul li:hover {
     border-radius: 20px;
 }
 .card h2{
+    font-family: var(--ff-heading);
     font-size: 20px;
     font-weight: 700;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
     margin: 10px 0;
 }
 .card p{
     width: 50%;
+    font-family: var(--ff-text);
     font-size: 16px;
     font-weight: 400;
-    color: rgb(66, 66, 66);
+    color: var(--text-color);
     margin: 10px 0;
     text-align: center;
 }
@@ -472,11 +491,11 @@ nav ul li:hover {
 }
 .card02{    
     grid-area: card02;
-    background: #F5D0A9;
+    background: var(--bg-secondary);
 }
 .card03{
     grid-area: card03;
-    background: #F5D0A9;
+    background: var(--bg-secondary);
 
 }
 .card04{
@@ -488,12 +507,12 @@ nav ul li:hover {
 }
 .card06{
     grid-area: card06;   
-    background: #F5D0A9;
+    background: var(--bg-secondary);
 
 }
 .card07{
     grid-area: card07;
-    background: #F5D0A9;
+    background: var(--bg-secondary);
 }
 .card08{
     grid-area: card08;
@@ -501,7 +520,7 @@ nav ul li:hover {
 }
 .card09{
     grid-area: card09;
-    background: #F5D0A9;
+    background: var(--bg-secondary);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -516,8 +535,10 @@ nav ul li:hover {
     width: 200px;
 }
 .card09 div p{
+    color: var(--text-color);
     width: 100px;
     margin-left: -50px;
+    font-family: var(--ff-text);
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -541,14 +562,13 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(180deg, #8b8885, #EE811C);
+    background: linear-gradient(180deg, #F5D0A9, #EE811C);
 }
 
-.social-media {
-    margin-right: 10px;
-} 
-.social-media  a{    
-    color: #292928;
+footer p{
+    font-family: var(--ff-text);
+    font-size: 12px;
+    color: var(--text-color);
 } 
 .social-media img {
     width: 30px;
